@@ -403,3 +403,6 @@ nav.top .ext{font-size:.72em;color:var(--sub);margin-left:2px;font-weight:400}
 
 /* publication layout: authors on new line */
 ol.pubs .aline{display:block;margin-top:3px}
+
+/* grants rows */
+.rows .rtag{margin-right:9px;vertical-align:1px;margin-top:0}
