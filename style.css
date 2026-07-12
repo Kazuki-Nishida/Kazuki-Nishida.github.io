@@ -574,3 +574,8 @@ ol.pubs strong{
 
 /* 「最終」badge: violet tone (visible on paper bg) */
 .rb.last{background:#efe9fb;color:#4e3a86;border:1px solid #d2c2ef}
+
+/* facts: grid layout — overlap structurally impossible */
+.facts li{display:grid;grid-template-columns:8em 1fr;column-gap:14px;align-items:start}
+.facts .k{min-width:0;white-space:normal}
+.facts-card .facts li{display:grid}
