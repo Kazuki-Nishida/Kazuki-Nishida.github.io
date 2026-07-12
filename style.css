@@ -546,3 +546,11 @@ ol.pubs strong{
 
 /* link chips: two rows */
 .linkchips + .linkchips{margin-top:9px}
+
+/* author name: pill highlight (visibility v2) */
+ol.pubs strong{
+  background:#e4eaff;border:1px solid #c7d3f8;color:#1f2c66;
+  padding:0 9px;border-radius:999px;font-weight:700;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+  white-space:nowrap;
+}
