@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Research | 西田一貴 Kazuki Nishida</title>
+<meta name="description" content="西田一貴の研究ポートフォリオ。主導する二大研究プログラムと、10領域にわたる横断的な共同研究。">
+</head>
+<body>
+<div class="wrap">
+<header class="site"><div class="accentbar"></div><div class="brand">
+<a class="name" href="index.html">西田一貴<span class="en">Kazuki Nishida</span></a>
+<nav class="top"><a href="index.html">Home</a><span class="here">Research</span><a href="projects.html">Projects</a><a href="publications.html">Publications</a><a href="https://researchmap.jp/kazuki-nishida">researchmap</a></nav></div></header>
+
+<div class="hero solo">
+  <h1>研究</h1>
+  <p class="lead">
+    私の研究は二層構造です。ひとつは、自分が旗を立てて主導する <b>二つの研究プログラム</b>。
+    もうひとつは、生物統計家として臨床各科の医師と組み、<b>10を超える診療領域</b>で積み重ねてきた共同研究。
+    この「深い軸」と「広い裾野」の両方を持つことが、医師かつ統計家である私の研究者像です。
+  </p>
+</div>
+
+<!-- ===== TIER 1: PI-led signature programs ===== -->
+<section id="signature">
+  <div class="eyebrow"><h2>主導する研究プログラム</h2><span class="count">Principal Investigator</span></div>
+  <div class="programs">
+
+    <article class="prog">
+      <span class="kicker">Program 1 ・ Pharmacovigilance × AI</span>
+      <h3>医薬品有害事象シグナルの「異質性」解析</h3>
+      <p class="en-sub">Heterogeneity-aware signal detection on VigiBase</p>
+      <p>
+        世界4,000万件超の副作用自発報告データベース VigiBase を対象に、従来の「平均的な単一指標」による安全性評価を、
+        AIで患者背景ごとの差をとらえる「<b>誰が・どんな条件で・どれほど</b>」の評価へと精緻化する枠組みを構築しています。
+        国際ガイドライン READUS-PV の信頼性を土台に、因果推論×機械学習の思想を薬剤疫学へ導入する試みです。
+        性質の異なる3つのAI手法を、課題に応じて使い分けます。
+      </p>
+      <ul class="themes">
+        <li><b>患者タイプ分類（K-modes）</b>：クリンダマイシンと周術期の意識障害／気管支鏡検査時の気管支攣縮の原因探索</li>
+        <li><b>組合せ安全性マップ（XGBoost）</b>：抗凝固薬DOAC×抗血小板薬の出血リスクの可視化</li>
+        <li><b>リスク変動因子の同定（Signal Forest）</b>：シロリムスと脂質異常症の年齢層別シグナル</li>
+      </ul>
+      <div class="fund"><span>科研費 若手研究 2026–2029</span><span>WHO-UMC ライセンス取得済</span><span>カーン大学・パリ大学（仏）</span></div>
+    </article>
+
+    <article class="prog">
+      <span class="kicker">Program 2 ・ Privacy-preserving Federated Learning</span>
+      <h3>個人情報を守る、医療データの国際共有基盤</h3>
+      <p class="en-sub">International federated learning across hospitals (Japan–France)</p>
+      <p>
+        患者データを施設外へ移動させず、各拠点で学習した結果（モデル更新）だけを共有する<b>連合学習</b>を、
+        名古屋大学病院とカーン大学病院を起点に、現実の病院環境で継続運用できる形に確立します。
+        第一段階のパイロットは、前立腺がんホルモン療法後の心血管イベント早期予測モデル。
+        単一施設に偏らず、国境を越えて外的検証を反復できる医療AI運用モデルを目指します。
+      </p>
+      <ul class="themes">
+        <li><b>日仏変数辞書</b>：概念・単位・欠測の意味まで定義し、拠点間でデータ整合性を担保</li>
+        <li><b>失敗耐性のある段階設計</b>：連合学習単体で意味ある成果に届く到達ラインを1年目に置く</li>
+        <li><b>拡張の標準手順化</b>：第3拠点以降を一般化し、持続可能な国際基盤へ</li>
+      </ul>
+      <div class="fund"><span>セコム科学技術振興財団 2026–2029</span><span>Fed-BioMed</span><span>名大・カーン大（仏）</span></div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== TIER 2: cross-domain collaborative research ===== -->
+<section id="collab">
+  <div class="eyebrow"><h2>領域横断の共同研究</h2><span class="count">Statistical Lead ・ 90+ Papers</span></div>
+  <p class="pubnote">
+    臨床各科の医師と組み、研究デザインと統計解析の責任者として関わってきた研究群です。
+    一つの診療科にとどまらず領域を横断できることは、医師であり統計家である私ならではの強みだと考えています。
+  </p>
+  <div class="domains">
+    <div class="dom"><div class="h"><span class="n">集中治療・救急</span><span class="c">42 papers</span></div>
+      <p>敗血症、心停止後症候群の体温管理、人工呼吸器離脱、せん妄、外傷トリアージなど。<i>Critical Care Medicine</i>、<i>Resuscitation</i>、<i>Neurocritical Care</i> 他。</p></div>
+    <div class="dom"><div class="h"><span class="n">脳神経・精神</span><span class="c">12 papers</span></div>
+      <p>くも膜下出血後の治療反応の異質性、脳血管イベントの診断、向精神薬の安全性など。</p></div>
+    <div class="dom"><div class="h"><span class="n">呼吸器・気管支鏡</span><span class="c">8 papers</span></div>
+      <p>末梢肺病変の気管支鏡診断能、間質性肺炎の呼吸管理など。<i>J. Bronchology</i>、<i>BMC Pulmonary Medicine</i> 他。</p></div>
+    <div class="dom"><div class="h"><span class="n">消化器</span><span class="c">7 papers</span></div>
+      <p>膵IPMNの遺伝子変異解析、消化器内視鏡、肝がんなど。<i>J. Gastroenterology</i> 他。</p></div>
+    <div class="dom"><div class="h"><span class="n">循環器・血管</span><span class="c">6 papers</span></div>
+      <p>下肢バイパスの臨床予後、静脈治療の熱誘発血栓、心房細動など。<i>Circulation Journal</i> 他。</p></div>
+    <div class="dom"><div class="h"><span class="n">整形外科</span><span class="c">6 papers</span></div>
+      <p>軟骨無形成症の治療薬開発（第2相試験）、デスモイド腫瘍、骨・軟骨研究など。</p></div>
+    <div class="dom"><div class="h"><span class="n">腫瘍・がん</span><span class="c">6 papers</span></div>
+      <p>泌尿器腫瘍、がん薬物療法の安全性など、腫瘍領域の臨床研究を統計面から支援。</p></div>
+    <div class="dom"><div class="h"><span class="n">小児・周産期／その他</span><span class="c">17 papers</span></div>
+      <p>新生児・小児薬物療法、医学教育、産業保健、耳鼻科など、さらに幅広い領域へ。</p></div>
+  </div>
+</section>
+
+<!-- ===== identity / background ===== -->
+<section id="about">
+  <div class="eyebrow"><h2>経歴と立ち位置</h2></div>
+  <div class="two">
+    <div>
+      <p style="margin-top:0">
+        名古屋大学医学部を卒業し初期臨床研修を経たのち、臨床を続けることへの問いから生物統計の道へ。
+        名古屋大学で博士（医学）を取得し、5年間、大学病院の臨床研究支援センターで実務生物統計家として
+        多領域の研究を統計解析責任者の立場で支えました。
+      </p>
+      <p>
+        2024年からフランスの研究チームとVigiBase研究を開始し、
+        2025年に京都大学へ拠点を移してからは、支援の立場から<b>自ら主導する研究</b>へと軸足を移しています。
+        「臨床 × 生物統計 × 学際性」が私の一貫した強みです。
+      </p>
+    </div>
+    <div>
+      <ul class="facts">
+        <li><span class="k">現職</span><span>名大 生物統計学分野 講師（2026–）</span></li>
+        <li><span class="k">兼任</span><span>京大 臨床統計学 特任講師／藤田医大 客員講師</span></li>
+        <li><span class="k">学位</span><span>博士（医学）・医師</span></li>
+        <li><span class="k">前職</span><span>京大 医療統計学 助教（2025）／名大病院 先端医療開発部 病院助教（2020–2025）</span></li>
+        <li><span class="k">受賞</span><span>つるま賞（名大医学系研究科, 2016）</span></li>
+        <li><span class="k">教育</span><span>医療データ科学／解析計画実習 ほか</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><p>© 2019–2026 Kazuki Nishida ｜ statsbio.com ｜ Source: <a href="https://researchmap.jp/kazuki-nishida">researchmap</a>（2026-07-12時点）</p></footer>
+</div>
+</body>
+</html>
