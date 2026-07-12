@@ -521,3 +521,12 @@ nav.top{column-gap:24px}
 
 /* 星光ゴールドの一貫化 */
 .sel{color:var(--star)}
+
+/* language switcher: 2-line cells with flags */
+.langsw{padding:4px 6px;border-radius:18px;gap:3px}
+.langsw a,.langsw .langcur{
+  display:flex;flex-direction:column;align-items:center;
+  padding:4px 12px 3px;border-radius:13px;line-height:1.3;gap:1px;
+}
+.langsw .ll{font-weight:700;font-size:.95em;letter-spacing:.03em}
+.langsw .lf{font-size:1.05em;line-height:1.15}
