@@ -530,3 +530,19 @@ nav.top{column-gap:24px}
 }
 .langsw .ll{font-weight:700;font-size:.95em;letter-spacing:.03em}
 .langsw .lf{font-size:1.05em;line-height:1.15}
+
+/* author name highlight in publication lists */
+ol.pubs strong{
+  color:var(--accent-dark);font-weight:700;
+  background:linear-gradient(transparent 58%, #dbe2fa 58%);
+  padding:0 3px;border-radius:3px;
+}
+
+/* qualifications */
+.quals{list-style:none;padding:0;margin:0}
+.quals li{padding:9px 2px;border-bottom:1px solid var(--line)}
+.quals li:last-child{border-bottom:none}
+.quals li::before{content:"◆";color:var(--accent);font-size:.55em;margin-right:12px;vertical-align:2px}
+
+/* link chips: two rows */
+.linkchips + .linkchips{margin-top:9px}
