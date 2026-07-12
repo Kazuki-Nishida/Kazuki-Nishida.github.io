@@ -396,3 +396,7 @@ ol.reps a:hover{color:var(--accent);text-decoration:underline}
   .ccards{grid-template-columns:1fr}
   .fcard{padding:22px 20px 18px}
 }
+
+/* fixes: lead width / external label */
+.lead{max-width:none}
+nav.top .ext{font-size:.72em;color:var(--sub);margin-left:2px;font-weight:400}
