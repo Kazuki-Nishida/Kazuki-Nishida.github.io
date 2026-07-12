@@ -400,3 +400,6 @@ ol.reps a:hover{color:var(--accent);text-decoration:underline}
 /* fixes: lead width / external label */
 .lead{max-width:none}
 nav.top .ext{font-size:.72em;color:var(--sub);margin-left:2px;font-weight:400}
+
+/* publication layout: authors on new line */
+ol.pubs .aline{display:block;margin-top:3px}
