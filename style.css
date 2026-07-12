@@ -414,3 +414,68 @@ ol.pubs .aline{display:block;margin-top:3px}
 .langsw .langcur{color:var(--ink);font-weight:700}
 .langsw .langsep{color:var(--line);margin:0 .1em}
 @media (max-width:680px){ .langsw{margin-left:0;margin-top:6px;display:block} }
+
+/* ==== design polish v2: header & banner ==== */
+header.site{padding:0;border-bottom:none}
+.accentbar{
+  height:3px;border-radius:0;
+  background:linear-gradient(90deg,var(--accent-dark) 0%,var(--accent) 32%,#4fa3aa 62%,rgba(185,217,219,0) 100%);
+  margin:0 -24px 20px;
+}
+.brand{display:flex;align-items:center;gap:18px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.brand .name{font-size:1.22em;line-height:1.25;display:flex;flex-direction:column;gap:0}
+.brand .name .en{margin-left:0;font-size:.56em;letter-spacing:.26em;text-transform:uppercase;color:var(--sub)}
+nav.top{margin-left:auto;display:flex;align-items:center;flex-wrap:wrap;gap:6px 26px;row-gap:8px}
+nav.top a,nav.top .here{margin-left:0;font-size:.9em;letter-spacing:.02em}
+nav.top>a{color:var(--sub);position:relative;padding:3px 0;transition:color .15s;text-decoration:none}
+nav.top>a:hover{color:var(--accent-dark);text-decoration:none}
+nav.top>a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--accent);border-radius:2px;transition:right .18s ease}
+nav.top>a:hover::after{right:0}
+nav.top .here{color:var(--accent-dark);font-weight:700;position:relative;padding:3px 0}
+nav.top .here::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--accent);border-radius:2px}
+nav.top .ext{font-size:.66em;color:#9aa7ad;margin-left:3px;font-weight:400}
+
+/* language switcher: segmented pill */
+.langsw{
+  display:inline-flex;align-items:center;gap:2px;
+  margin-left:4px;padding:3px 5px;
+  border:1px solid var(--line);border-radius:999px;background:var(--card);
+  font-size:.76em;white-space:nowrap;line-height:1.6;
+  box-shadow:0 1px 3px -2px rgba(12,106,115,.25);
+}
+.langsw .langsep{display:none}
+.langsw a,.langsw .langcur{padding:1px 11px;border-radius:999px;text-decoration:none;font-weight:600}
+.langsw a{color:var(--sub);transition:.12s}
+.langsw a:hover{color:var(--accent-dark);background:var(--accent-soft);text-decoration:none}
+.langsw .langcur{color:#fff;background:var(--accent)}
+
+/* hero */
+.hero{position:relative;padding:46px 0 14px}
+.hero::before{
+  content:"";position:absolute;top:-10px;right:-70px;width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle,rgba(12,106,115,.08) 0%,rgba(12,106,115,0) 68%);
+  pointer-events:none;
+}
+.hero h1{font-size:2.55em;letter-spacing:.06em;margin-bottom:2px}
+.hero .romaji{
+  letter-spacing:.16em;text-transform:uppercase;font-size:.8em;font-weight:700;
+  color:var(--accent-dark);margin:4px 0 22px;
+}
+.hero .titles li{margin:4px 0}
+.hero .degree{margin:14px 0 20px}
+.portrait{position:relative}
+.portrait img{
+  border-radius:16px;border:1px solid #d5e0e1;
+  box-shadow:0 22px 44px -20px rgba(9,82,90,.5), 0 4px 14px -8px rgba(9,82,90,.3);
+}
+.linkchips a{padding:5px 16px;font-size:.85em}
+h2::after{width:42px}
+.hero.solo{padding-top:42px}
+
+@media (max-width:680px){
+  .brand{flex-direction:column;align-items:flex-start;gap:12px}
+  nav.top{margin-left:0;gap:4px 20px}
+  .langsw{margin-left:0;margin-top:2px;display:inline-flex}
+  .hero::before{display:none}
+  .hero h1{font-size:2.1em}
+}
