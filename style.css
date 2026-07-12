@@ -554,3 +554,23 @@ ol.pubs strong{
   box-decoration-break:clone;-webkit-box-decoration-break:clone;
   white-space:nowrap;
 }
+
+/* author name: underline emphasis only (v3) */
+ol.pubs strong{
+  background:none;border:none;padding:0;border-radius:0;white-space:normal;
+  color:var(--accent-dark);font-weight:700;
+  text-decoration:underline;
+  text-decoration-color:var(--accent);
+  text-decoration-thickness:2px;
+  text-underline-offset:4px;
+}
+
+/* fix: flex-shrink text overlap (long labels in EN/FR) */
+.facts li{align-items:flex-start}
+.facts .k{flex:0 0 auto;white-space:nowrap}
+.facts li>span:last-child{flex:1 1 auto;min-width:0}
+.rows .when{flex-shrink:0}
+.rows li>span:last-child{flex:1 1 auto;min-width:0}
+
+/* 「最終」badge: violet tone (visible on paper bg) */
+.rb.last{background:#efe9fb;color:#4e3a86;border:1px solid #d2c2ef}
