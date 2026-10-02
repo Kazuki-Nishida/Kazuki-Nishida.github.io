@@ -579,3 +579,6 @@ ol.pubs strong{
 .facts li{display:grid;grid-template-columns:8em 1fr;column-gap:14px;align-items:start}
 .facts .k{min-width:0;white-space:normal}
 .facts-card .facts li{display:grid}
+
+/* preprint status badge: muted & dashed = not yet peer-reviewed (2026-10) */
+.rb.pre{background:transparent;color:var(--sub);border:1px dashed #aeb5c9;font-weight:600}
