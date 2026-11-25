@@ -1,0 +1,58 @@
+# Keeps the CV (cv/index.html + PDFs) in step with researchmap and cv/cv.yaml.
+# Runs every Monday 03:23 JST, whenever the CV sources change, and on demand (Actions tab > Run workflow).
+name: CV auto-update
+
+on:
+  schedule:
+    - cron: "23 18 * * 0"
+  push:
+    branches: [main]
+    paths:
+      - "cv/cv.yaml"
+      - "cv/template.html"
+      - "cv/cv.css"
+      - "cv/build_cv.py"
+      - ".github/workflows/cv.yml"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Rebuild and republish even if nothing changed"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # commit the rebuilt CV
+  pages: write      # ask GitHub Pages to publish it
+
+concurrency:
+  group: cv-auto-update
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: pip install -r cv/requirements.txt
+      - name: Build the CV (reads researchmap; keeps the saved data if researchmap is down)
+        id: build
+        run: python cv/build_cv.py --fetch ${{ inputs.force && '--force' || '' }}
+      - name: Commit and publish if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add -A cv index.html en/index.html fr/index.html
+          if git diff --cached --quiet; then
+            echo "CV unchanged, nothing to publish."
+            exit 0
+          fi
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "CV: auto-update ${{ steps.build.outputs.updated }} (${{ steps.build.outputs.note }})"
+          git push || (git pull --rebase && git push)
+          # Pages does not rebuild for pushes made with the workflow's own token, so request the build.
+          gh api -X POST "repos/${{ github.repository }}/pages/builds"
