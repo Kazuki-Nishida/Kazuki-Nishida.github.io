@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ p.name }} | Curriculum vitae</title>
+<meta name="description" content="Curriculum vitae of {{ p.name }}, {{ p.degrees }}. {{ p.primary_role }}.">
+<link rel="canonical" href="{{ meta.site }}/cv/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233f51a8'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-weight='700' font-size='27' fill='white' text-anchor='middle'%3EKN%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="cv.css">
+<style>@page { @bottom-left { content: "{{ p.name }}, curriculum vitae, updated {{ updated_long }}"; } }</style>
+</head>
+<body>
+{# ---------- helpers ---------- #}
+{% macro rows(items) %}
+<div class="rows">
+{% for it in items %}
+  <div class="row"><div class="when">{{ it.period }}</div><div class="what">{{ it.text | md }}{% if it.url %} <a class="src" href="{{ it.url }}">{{ it.url | domain }}</a>{% endif %}</div></div>
+{% endfor %}
+</div>
+{% endmacro %}
+{% macro publist(pubs, cls="") %}
+<ol class="pubs {{ cls }}">
+{% for q in pubs %}
+  <li class="pub"><div class="when">{% if q.show_year %}{{ q.year }}{% endif %}</div><div class="what"><span class="num">{{ loop.index }}.</span>{{ q.authors }}. {{ q.title }}{{ q.title_end }} <i class="jr">{{ q.journal }}</i>. <span class="nb">{{ q.source }}.</span>{% if q.doi %} <a class="doi" href="https://doi.org/{{ q.doi }}">doi:{{ q.doi }}</a>{% endif %}{% if q.role_label %} <span class="role-tag">{{ q.role_label }}</span>{% endif %}</div></li>
+{% endfor %}
+</ol>
+{% endmacro %}
+
+<nav class="topbar screen" aria-label="CV">
+  <a href="{{ meta.site }}/en/">Home</a>
+  <span class="dls"><a href="{{ meta.pdf_short_name }}">Short version (PDF)</a><a class="dl" href="{{ meta.pdf_name }}">Download PDF</a></span>
+</nav>
+
+<main class="sheet">
+<header class="mast">
+  <div class="bar"></div>
+  <div class="mast-grid">
+    <div>
+      <h1>{{ p.name }}<span class="deg">, {{ p.degrees }}</span></h1>
+      <p class="role">{{ p.primary_role }}</p>
+      {% if p.email or p.date_of_birth %}
+      <p class="personal">{% if p.email %}<a href="mailto:{{ p.email }}">{{ p.email }}</a>{% endif %}{% if p.email and p.date_of_birth %}, {% endif %}{% if p.date_of_birth %}born {{ p.date_of_birth }}{% endif %}</p>
+      {% endif %}
+    </div>
+    <ul class="links">
+      {% for l in p.links %}
+      <li><a href="{{ l.url }}">{{ l.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <p class="stamp">Curriculum vitae, updated <time datetime="{{ updated_iso }}">{{ updated_long }}</time></p>
+</header>
+
+<section>
+  <h2>Professional summary</h2>
+  <div class="row"><div class="when"></div><div class="what"><p>{{ cfg.summary }}</p></div></div>
+</section>
+
+<section>
+  <h2>Academic appointments</h2>
+  {{ rows(cfg.appointments) }}
+</section>
+
+<section class="keep">
+  <h2>Education</h2>
+  {{ rows(cfg.education) }}
+</section>
+
+<section class="keep">
+  <h2>Clinical training</h2>
+  {{ rows(cfg.clinical_training) }}
+</section>
+
+<section>
+  <h2>International collaboration and key projects</h2>
+  <div class="rows spaced">
+  {% for it in cfg.projects %}
+    <div class="row"><div class="when"></div><div class="what"><p><b class="lead-in">{{ it.title }}.</b> {{ it.text }}</p></div></div>
+  {% endfor %}
+  </div>
+</section>
+
+<section>
+  <h2>Selected professional experience</h2>
+  <div class="rows spaced">
+  {% for it in cfg.experience %}
+    <div class="row"><div class="when"></div><div class="what"><p><b class="lead-in">{{ it.title }}.</b> {{ it.text }}</p></div></div>
+  {% endfor %}
+  </div>
+</section>
+
+<section>
+  <h2>Research grants</h2>
+  <div class="rows">
+  {% for g in cfg.grants %}
+    <div class="row"><div class="when">{{ g.period }}</div><div class="what"><span class="tag {{ 'pi' if g.role == 'PI' else 'co' }}">{{ 'Principal investigator' if g.role == 'PI' else 'Co-investigator' }}</span>{{ g.title }}<span class="g-meta">{{ g.funder }}{% if g.number %}, {{ g.number }}{% endif %}{% if g.amount %}, {{ g.amount }}{% endif %}</span></div></div>
+  {% endfor %}
+  </div>
+</section>
+
+<section class="keep">
+  <h2>Awards and fellowships</h2>
+  {{ rows(cfg.awards) }}
+</section>
+
+<section class="keep">
+  <h2>Licensure, certifications and qualifications</h2>
+  <div class="rows">
+  {% for t in cfg.qualifications %}
+    <div class="row"><div class="when"></div><div class="what">{{ t }}</div></div>
+  {% endfor %}
+  </div>
+</section>
+
+<section class="keep">
+  <h2>Technical skills and languages</h2>
+  <div class="rows">
+  {% for s in cfg.skills %}
+    <div class="row"><div class="when label">{{ s.label }}</div><div class="what">{{ s.text }}</div></div>
+  {% endfor %}
+  </div>
+</section>
+
+<section class="keep">
+  <h2>Books</h2>
+  {{ rows(cfg.books) }}
+</section>
+
+<section class="publications">
+  <h2>Publications</h2>
+  <div class="row"><div class="when"></div><div class="what"><p class="note">{{ n_total }} journal publications, {{ n_lead }} of them as first, co-first, corresponding or last author{% if preprints %}, and {{ preprints | length }} preprint{{ 's' if preprints | length > 1 else '' }}{% endif %}. The list follows <a href="https://researchmap.jp/{{ cfg.publications.researchmap_permalink }}/published_papers?lang=en">researchmap</a> and is refreshed automatically.</p></div></div>
+
+  <h3>As first, co-first, corresponding or last author <span class="cnt">({{ n_lead }})</span></h3>
+  {{ publist(lead) }}
+
+  {% if preprints %}
+  <h3>Preprints <span class="cnt">({{ preprints | length }})</span></h3>
+  <ol class="pubs">
+  {% for q in preprints %}
+    <li class="pub"><div class="when">{% if q.show_year %}{{ q.year }}{% endif %}</div><div class="what"><span class="num">{{ loop.index }}.</span>{{ q.authors }}. {{ q.title }}. {% if q.url %}<a class="doi" href="{{ q.url }}">{{ q.venue }}</a>{% else %}{{ q.venue }}{% endif %}.{% if q.role_label %} <span class="role-tag">{{ q.role_label }}</span>{% endif %}</div></li>
+  {% endfor %}
+  </ol>
+  {% endif %}
+
+  {% if short %}
+  <div class="row more"><div class="when"></div><div class="what"><p class="note">The other {{ coauth | length }} publications, as co-author, are listed on <a href="https://researchmap.jp/{{ cfg.publications.researchmap_permalink }}/published_papers?lang=en">researchmap</a> (researchmap.jp/{{ cfg.publications.researchmap_permalink }}).</p></div></div>
+  {% else %}
+  <h3>As co-author <span class="cnt">({{ coauth | length }})</span></h3>
+  {{ publist(coauth, "wide") }}
+  {% endif %}
+</section>
+</main>
+</body>
+</html>

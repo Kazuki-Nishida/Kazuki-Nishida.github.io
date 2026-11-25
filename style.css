@@ -582,3 +582,14 @@ ol.pubs strong{
 
 /* preprint status badge: muted & dashed = not yet peer-reviewed (2026-10) */
 .rb.pre{background:transparent;color:var(--sub);border:1px dashed #aeb5c9;font-weight:600}
+
+/* CV button in the hero (2026-11). The date inside <!--cv-updated--> is rewritten by cv/build_cv.py */
+.cvline{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:0 0 14px}
+.cvbtn{
+  display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+  border-radius:999px;padding:6px 20px;font-size:.88em;font-weight:700;letter-spacing:.03em;
+  box-shadow:0 8px 18px -10px rgba(40,53,102,.6);transition:.15s;
+}
+.cvbtn:hover{background:var(--accent-dark)}
+.cvmeta{color:var(--sub);font-size:.8em;font-variant-numeric:tabular-nums}
+@media print{.cvline{display:none}}

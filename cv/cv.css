@@ -1,0 +1,166 @@
+/* CV (statsbio.com/cv/) — one stylesheet for the web page and the PDF (print rules at the bottom).
+   Colours and the gradient bar follow the site's style.css. */
+
+/* Fonts: Source Serif 4 and Source Sans 3 (SIL Open Font License, see fonts/OFL-*.txt).
+   Fixed-weight files on purpose: Chrome embeds them in the PDF as real fonts. */
+@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:400;font-display:block;src:url(fonts/source-serif-4-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:400;font-display:block;src:url(fonts/source-serif-4-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:400;font-display:block;src:url(fonts/source-serif-4-greek-400-normal.woff2) format("woff2");unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF}
+@font-face{font-family:"Source Serif 4";font-style:italic;font-weight:400;font-display:block;src:url(fonts/source-serif-4-latin-400-italic.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Source Serif 4";font-style:italic;font-weight:400;font-display:block;src:url(fonts/source-serif-4-latin-ext-400-italic.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:600;font-display:block;src:url(fonts/source-serif-4-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:600;font-display:block;src:url(fonts/source-serif-4-latin-ext-600-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:700;font-display:block;src:url(fonts/source-serif-4-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:700;font-display:block;src:url(fonts/source-serif-4-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:400;font-display:block;src:url(fonts/source-sans-3-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:400;font-display:block;src:url(fonts/source-sans-3-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:600;font-display:block;src:url(fonts/source-sans-3-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:600;font-display:block;src:url(fonts/source-sans-3-latin-ext-600-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Source Sans 3";font-style:normal;font-weight:700;font-display:block;src:url(fonts/source-sans-3-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+:root{
+  --ink:#1c2340; --sub:#5a6379; --accent:#3f51a8; --accent-dark:#283566;
+  --line:#dfe3ef; --desk:#eef0f7;
+  --serif:"Source Serif 4","Noto Serif JP",Georgia,serif;
+  --sans:"Source Sans 3","Noto Sans JP","Helvetica Neue",Arial,sans-serif;
+  --date:6.3rem;            /* width of the date column that runs down every page */
+}
+*{box-sizing:border-box}
+html{font-size:15px}
+body{
+  margin:0;background:var(--desk);color:var(--ink);
+  font-family:var(--serif);font-size:1rem;line-height:1.5;
+  font-optical-sizing:auto;font-kerning:normal;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+a{color:var(--accent-dark);text-decoration-color:rgba(63,81,168,.35);text-underline-offset:2px}
+p{margin:0}
+
+/* ---------- screen chrome ---------- */
+.topbar{
+  max-width:210mm;margin:1.3rem auto 0;padding:0 .3rem;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--sans);font-size:.92rem;
+}
+.topbar a{text-decoration:none;font-weight:600}
+.topbar .dls{display:flex;align-items:center;gap:1.1rem}
+.topbar .dl{background:var(--accent);color:#fff;border-radius:999px;padding:.3rem 1.1rem}
+.topbar .dl:hover{background:var(--accent-dark)}
+.topbar a:focus-visible,.sheet a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.sheet{
+  max-width:210mm;margin:.9rem auto 3rem;background:#fff;
+  padding:15mm 17mm 17mm;
+  box-shadow:0 22px 50px -32px rgba(35,44,86,.5),0 2px 10px -6px rgba(35,44,86,.25);
+}
+
+/* ---------- masthead ---------- */
+.mast .bar{
+  height:3px;margin-bottom:1.5rem;
+  background:linear-gradient(90deg,#232c56 0%,#3f51a8 34%,#7d8bd9 64%,rgba(199,208,240,0) 100%);
+}
+.mast-grid{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem}
+h1{
+  font-family:var(--serif);font-weight:600;font-size:2.3rem;line-height:1.08;
+  letter-spacing:.004em;margin:0;
+}
+h1 .deg{font-weight:400;font-size:.48em;color:var(--sub);letter-spacing:.02em}
+.role{margin:.5rem 0 0;font-size:1.02rem}
+.personal{margin:.15rem 0 0;font-family:var(--sans);font-size:.86rem;color:var(--sub)}
+.links{
+  list-style:none;margin:0;padding:0;text-align:right;white-space:nowrap;
+  font-family:var(--sans);font-size:.84rem;line-height:1.55;
+}
+.links a{text-decoration:none}
+.stamp{
+  margin:.95rem 0 0;padding-top:.5rem;border-top:1px solid var(--line);
+  font-family:var(--sans);font-size:.8rem;color:var(--sub);letter-spacing:.02em;
+}
+
+/* ---------- sections ---------- */
+section{margin-top:1.5rem}
+h2{
+  font-family:var(--sans);font-weight:700;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent-dark);margin:0 0 .62rem;padding-bottom:.36rem;
+  background:linear-gradient(var(--accent),var(--accent)) left bottom / 2.4rem 2px no-repeat;
+}
+h3{
+  font-family:var(--sans);font-weight:600;font-size:.92rem;color:var(--ink);
+  margin:1.05rem 0 .5rem;padding-left:calc(var(--date) + 1rem);
+}
+/* keep a heading on the same page as what follows it: the heading box is made
+   taller by an invisible tail that overlaps the next block */
+h2,h3{break-inside:avoid;break-after:avoid}
+h2::after,h3::after{content:"";display:block;height:5.5rem;margin-bottom:-5.5rem}
+h3 .cnt{color:var(--sub);font-weight:400}
+
+/* date column + content: the same grid for every kind of entry */
+.row,.pub{display:grid;grid-template-columns:var(--date) minmax(0,1fr);column-gap:1rem;break-inside:avoid}
+.row + .row{margin-top:.3rem}
+.rows.spaced .row + .row{margin-top:.5rem}
+.row.more{margin-top:.8rem}
+section.keep{break-inside:avoid}
+.when{
+  font-family:var(--sans);font-size:.84rem;font-weight:600;color:var(--accent-dark);
+  font-variant-numeric:tabular-nums lining-nums;letter-spacing:.01em;padding-top:.09em;
+}
+.when.label{font-weight:600;color:var(--sub)}
+.lead-in{font-weight:600}
+.src{font-family:var(--sans);font-size:.82rem;color:var(--sub);white-space:nowrap}
+
+/* grants */
+.tag{
+  display:inline-block;font-family:var(--sans);font-size:.66rem;font-weight:700;letter-spacing:.04em;
+  line-height:1.5;border-radius:3px;padding:0 .5em;margin-right:.5em;vertical-align:.13em;
+}
+.tag.pi{background:var(--accent);color:#fff}
+.tag.co{color:var(--sub);box-shadow:inset 0 0 0 1px #c5cbdd}
+.g-meta{display:block;font-family:var(--sans);font-size:.84rem;color:var(--sub)}
+
+/* ---------- publications ---------- */
+.note{font-family:var(--sans);font-size:.88rem;color:var(--sub)}
+.pubs{list-style:none;margin:0;padding:0;font-size:.92rem;line-height:1.4}
+.pub + .pub{margin-top:.3rem}
+.pub .what{padding-left:1.75em;text-indent:-1.75em}
+.pub .num{
+  display:inline-block;width:1.75em;text-indent:0;
+  font-family:var(--sans);font-size:.88em;color:var(--sub);font-variant-numeric:tabular-nums lining-nums;
+}
+.pubs.wide .what{padding-left:2.25em;text-indent:-2.25em}
+.pubs.wide .num{width:2.25em}
+.pub strong{font-weight:700;color:var(--accent-dark)}
+.jr{font-style:italic}
+.nb{white-space:nowrap}
+.doi{font-family:var(--sans);font-size:.86em;color:var(--sub);text-decoration:none;white-space:nowrap}
+.doi:hover{color:var(--accent);text-decoration:underline}
+.role-tag{font-family:var(--sans);font-size:.8em;font-weight:700;color:var(--accent);white-space:nowrap;margin-left:.15em}
+.n-auth{color:var(--sub);font-size:.94em}
+
+/* ---------- small screens ---------- */
+@media (max-width:720px){
+  .sheet{margin:.7rem 0 2rem;padding:1.5rem 1.15rem 2rem}
+  .topbar{padding:0 1rem}
+  .mast-grid{display:block}
+  .links{text-align:left;margin-top:.8rem;white-space:normal}
+  h1{font-size:1.95rem}
+  h3{padding-left:0}
+  .row,.pub{grid-template-columns:minmax(0,1fr)}
+  .when:empty{display:none}
+  .pub .when{margin-top:.5rem}
+}
+
+/* ---------- PDF / print ---------- */
+@page{
+  size:A4;margin:15mm 17mm 16mm;
+  @bottom-left{font-family:"Source Sans 3",sans-serif;font-size:7.4pt;color:#5a6379}
+  @bottom-right{content:counter(page) " / " counter(pages);font-family:"Source Sans 3",sans-serif;font-size:7.4pt;color:#5a6379}
+}
+@media print{
+  html{font-size:9.3pt}
+  body{background:#fff}
+  .screen{display:none !important}
+  .sheet{max-width:none;margin:0;padding:0;box-shadow:none}
+  .sheet a{color:inherit;text-decoration:none}
+  .sheet .doi{color:var(--sub)}
+  .mast .bar,.tag,h2{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section{margin-top:1.35rem}
+}

@@ -1,0 +1,230 @@
+# =====================================================================
+#  CV の元データ（Kazuki Nishida）
+#
+#  このファイルを直すと、CV の Web版 (cv/index.html) と PDF が作り直されます。
+#  ・論文一覧は researchmap から自動取得（週1回）。ここには書きません。
+#  ・ここに書くのは「人が書く部分」と「researchmap にまだ無いもの」だけ。
+#  ・researchmap に無い論文は publications.extra に足す（後で researchmap に
+#    載っても DOI で重複排除されるので消さなくてよい）。
+# =====================================================================
+
+meta:
+  site: https://statsbio.com
+  pdf_name: Kazuki_Nishida_CV.pdf              # 全論文つきの完全版
+  pdf_short_name: Kazuki_Nishida_CV_short.pdf  # 短縮版（共著論文リストなし）
+  # トップページの <!--cv-updated-->…<!--/cv-updated--> を更新日で書き換える対象
+  stamp_pages: [index.html, en/index.html, fr/index.html]
+
+person:
+  name: Kazuki Nishida
+  degrees: "M.D., Ph.D."
+  primary_role: "Junior Associate Professor, Department of Biostatistics, Nagoya University Graduate School of Medicine"
+  # 公開版に出さない項目は空のまま（値を入れると名前の下に表示されます）
+  email: ""
+  date_of_birth: ""
+  # 名前の右に出すリンク（CV には statsbio.com を載せない方針）
+  links:
+    - {label: "ORCID 0000-0003-0367-8557", url: "https://orcid.org/0000-0003-0367-8557"}
+    - {label: "researchmap.jp/kazuki-nishida", url: "https://researchmap.jp/kazuki-nishida?lang=en"}
+
+summary: >-
+  Physician and biostatistician with expertise in clinical epidemiology, real-world data, and medical AI.
+  Experienced in designing and executing hospital-based observational studies and regulated clinical research
+  as a responsible biostatistician, with strong capability in translating clinical questions into reproducible
+  analytical protocols. Actively leading Franco-Japanese collaborations in pharmacoepidemiology and health data
+  science (including WHO VigiBase research and CANAL-AI), and experienced in securing research funding as a
+  principal investigator for privacy-preserving medical AI and federated learning initiatives.
+
+appointments:
+  - period: "2026–present"
+    text: "Junior Associate Professor, Department of Biostatistics, Nagoya University Graduate School of Medicine, Nagoya, Japan"
+  - period: "2026–present"
+    text: "Project Junior Associate Professor (concurrent), Department of Clinical Biostatistics, Kyoto University Graduate School of Medicine, Kyoto, Japan"
+  - period: "2026–present"
+    text: "Visiting Junior Associate Professor, Department of Anesthesiology and Critical Care Medicine, Fujita Health University School of Medicine, Aichi, Japan"
+  - period: "2025–2026"
+    text: "Assistant Professor, Department of Biostatistics, School of Public Health, Graduate School of Medicine, Kyoto University, Kyoto, Japan"
+  - period: "2020–2025"
+    text: "Assistant Professor, Center for Advanced Medicine and Clinical Research, Nagoya University Hospital, Nagoya, Japan"
+
+education:
+  - period: "2022"
+    text: "Ph.D. (Medical Science; Biostatistics), Nagoya University Graduate School of Medicine, Nagoya, Japan"
+  - period: "2014"
+    text: "M.D., Nagoya University School of Medicine, Nagoya, Japan"
+
+clinical_training:
+  - period: "2014–2016"
+    text: "Postgraduate Clinical Residency (two-year rotation), Kainan Hospital, Aichi, Japan"
+
+projects:
+  - title: "Franco-Japanese pharmacoepidemiology collaboration using WHO VigiBase"
+    text: >-
+      Sustained joint research with French partners; in 2025, contributed to seven VigiBase-related
+      peer-reviewed papers, including three first-author papers.
+  - title: "CANAL-AI (Caen–Nagoya Alliance for AI in Health Data)"
+    text: >-
+      International collaboration to develop privacy-preserving, federated workflows for hospital real-world
+      data analyses in oncology-related research, with emphasis on cross-country harmonization, reproducible
+      evaluation protocols, and operational feasibility under governance constraints.
+
+experience:
+  - title: "Responsible Biostatistician, Nagoya University Hospital (2020–2025)"
+    text: >-
+      Statistical responsibility for multiple regulated clinical research projects and investigator-initiated
+      trials; extensive consultation and study design support across diverse clinical domains. Delivered
+      tailored analytical strategies (multivariable modeling, survival analysis, mixed-effects modeling,
+      meta-analysis, and machine-learning–assisted modeling) and supported interpretability-focused reporting
+      for clinical stakeholders.
+  - title: "Biostatistics training, Nagoya University"
+    text: >-
+      Doctoral-level training in biostatistics and applied clinical research methods, with experience in
+      statistical analysis for observational studies and development of robust, reproducible analytical workflows.
+
+# 期間は「開始年–終了年」（暦年）。科研費は KAKEN の正式な期間・英題に合わせています。
+grants:
+  - period: "2026–2029"
+    role: PI
+    funder: "JSPS KAKENHI, Grant-in-Aid for Early-Career Scientists"
+    number: "26K20575"
+    title: "Machine Learning–Based Heterogeneity-Aware Signal Detection Using VigiBase"
+    url: "https://kaken.nii.ac.jp/en/grant/KAKENHI-PROJECT-26K20575/"
+  - period: "2026–2029"
+    role: PI
+    funder: "SECOM Science and Technology Foundation, Challenging Research Grant"
+    amount: "JPY 15,000,000"
+    title: "International sharing of medical data through privacy-preserving generative AI and federated learning"
+    url: "https://www.secomzaidan.jp/news/news20260525.html"
+  - period: "2026–2027"
+    role: PI
+    funder: "Stryker Japan K.K., research grant"
+    title: "Applying START triage to early trauma care: a secondary analysis of the CRASH-2 trial"
+  - period: "2022–2026"
+    role: Co-I
+    funder: "JSPS KAKENHI, Grant-in-Aid for Scientific Research (C)"
+    number: "22K09180"
+    title: "Elucidating key mechanisms of sepsis-induced coagulopathy through big data and coagulation profiling"
+  - period: "2022–2026"
+    role: Co-I
+    funder: "JSPS KAKENHI, Grant-in-Aid for Scientific Research (C)"
+    number: "22K08010"
+    title: "Gene-mutation analysis of IPMN lesions and surrounding pancreas for early pancreatic-cancer diagnosis"
+  - period: "2021–2026"
+    role: Co-I
+    funder: "JSPS KAKENHI, Grant-in-Aid for Scientific Research (C)"
+    number: "21K09075"
+    title: "Comparing 33 °C vs 35 °C targeted temperature management on neurological outcomes after post-cardiac-arrest syndrome"
+  - period: "2021–2024"
+    role: Co-I
+    funder: "Japan Agency for Medical Research and Development (AMED)"
+    title: "Translational development of an achondroplasia therapy via FGFR3 signal inhibition"
+  - period: "2020–2023"
+    role: PI
+    funder: "JSPS KAKENHI, Grant-in-Aid for Research Activity Start-up"
+    number: "20K23222"
+    title: "Effectiveness of P0.1 in Determining the Timing of Mechanical Ventilation Weaning: A Diagnostic Meta-Analysis"
+
+awards:
+  - period: "2026"
+    text: "Laureate, Japan–France Joint Travel Grant Program, 2nd edition (Embassy of France in Japan and the Kiyoko Goto and Paul Bourdarie Cancer Foundation): scientific stay at CHU de Caen Normandie, France"
+    url: "https://kiyoko-foundation.or.jp/en/news/jointgrantprogramlaureate2026/"
+  - period: "2016"
+    text: "Tsuruma Award for Academic Excellence, Nagoya University Graduate School of Medicine"
+
+qualifications:
+  - "Medical License (Japan), 2014"
+  - "Certified Trial Statistician, The Biometric Society of Japan, 2023"
+  - "Japan Statistical Society Certificate (JSSC), Grade 1: Applied Statistics (Medical and Biological Sciences)"
+  - "Japan Statistical Society Certificate (JSSC), Grade Pre-1"
+  - "EIKEN Test in Practical English Proficiency, Grade 1 (equivalent to CEFR C1)"
+
+skills:
+  - label: "Statistical programming"
+    text: "R (primary), Python (secondary), SAS (experience)"
+  - label: "Methods"
+    text: "clinical trial design support, observational study design, survival analysis, mixed-effects models, meta-analysis, interpretable machine learning (e.g., feature attribution methods), reproducible reporting and protocol-driven evaluation"
+  - label: "Languages"
+    text: "Japanese (native), English (fluent), French (basic)"
+  - label: "Society"
+    text: "The Biometric Society of Japan"
+
+books:
+  - period: "2024"
+    text: "*Modern Epidemiology*, Japanese edition (Gakujutsu Tosho Shuppansha): contributing translator"
+  - period: "2023"
+    text: "*Encyclopedia of Clinical Trials* (Asakura Shoten): contributing author and translator"
+
+# ---------------------------------------------------------------------
+#  プレプリント（採択されたらここから消し、論文は researchmap か extra へ）
+# ---------------------------------------------------------------------
+preprints:
+  # 新しいものを上に。roles は主著（first / co-first / last / corresponding）のときだけ書く
+  - title: "Estimand-specific bootstrap confidence intervals after optimism correction for prediction models"
+    authors: ["Seiya Takano", "Kazuki Nishida", "Ryo Emoto", "Shigeyuki Matsui"]
+    venue: "arXiv:2611.17774 [stat.ME]"
+    year: 2026
+    url: "https://arxiv.org/abs/2611.17774"
+  - title: "Small-study effects on the hierarchical summary ROC curve: latent accuracy and threshold trends in meta-analysis of diagnostic test accuracy"
+    authors: ["Yuta Nonomiya", "Kazuki Nishida"]
+    venue: "arXiv:2609.38297 [stat.ME]"
+    year: 2026
+    url: "https://arxiv.org/abs/2609.38297"
+    roles: [last, corresponding]
+    status: "in submission"
+
+# ---------------------------------------------------------------------
+#  論文（researchmap から自動取得）の調整
+# ---------------------------------------------------------------------
+publications:
+  researchmap_permalink: kazuki-nishida
+  # 共著論文で著者がこの人数を超えたら「先頭3名 … 本人 … 最終著者」に省略
+  max_authors: 10
+
+  # 本人の表記ゆれ（太字にする名前）
+  own_names: ["Kazuki Nishida", "K. Nishida", "Nishida Kazuki"]
+
+  # researchmap にまだ無い論文。DOI が researchmap に現れたら自動で1本にまとまる
+  extra:
+    - title: "Haemorrhagic event reporting with concomitant gemcitabine and warfarin: a VigiBase disproportionality analysis"
+      authors: ["Kazuki Nishida", "Basile Chrétien", "Angelique Da Silva", "Aiko Calabia", "Shigeyuki Matsui", "Tomohiro Terada", "Yuichi Ando"]
+      journal: "Frontiers in Pharmacology"
+      date: "2026-09-10"
+      volume: "17"
+      pages: "1858594"
+      doi: "10.3389/fphar.2026.1858594"
+      roles: [co-first, corresponding]
+
+  # researchmap では表せない役割（共同筆頭など）。DOI → 役割（researchmap の値を置き換え）
+  roles:
+    "10.1016/j.jvsv.2026.102488": [co-first]
+    "10.1371/journal.pone.0352029": [co-first]
+
+  # researchmap 側の誤記の上書き（DOI か "rm:番号" → 直したい項目）
+  overrides:
+    # Web of Science 由来で題名に "(vol 7, 2, 2019)" が付き、著者が3名で切れている
+    "10.1186/s40560-019-0389-x":
+      title: "Differential effect of lactate in predicting mortality in septic patients with or without disseminated intravascular coagulation: a multicenter, retrospective, observational study"
+      authors: ["Daisuke Hasegawa", "Kazuki Nishida", "Yoshitaka Hara", "Takahiro Kawaji", "Kazuhiro Moriyama", "Yasuyo Shimomura", "Daisuke Niimi", "Hidefumi Komura", "Osamu Nishida"]
+      pages: "35"
+
+  # CV に出さない論文（"rm:番号" か DOI）
+  exclude: []
+
+  # 著者名の表記ゆれ・誤記の統一（researchmap の表記 → CV での表記）
+  author_name_fixes:
+    "Nishida Kazuki": "Kazuki Nishida"
+    "Basile Chretien": "Basile Chrétien"
+    "hiroaki hiraiwa": "Hiroaki Hiraiwa"
+    "Maeda Keiko": "Keiko Maeda"
+    "Chen Yoshikawa Fengshi Toyofumi": "Toyofumi Fengshi Chen-Yoshikawa"
+    "Matsu, Shigeyuki": "Shigeyuki Matsui"
+    "Ozaki, Masuyuki": "Masayuki Ozaki"
+
+  # 誌名の表記（researchmap の表記を小文字にしたもの → CV での表記）。
+  # ここに無い誌名は自動で整形（副題を落として各語を大文字始まりに）
+  journal_names:
+    "plos one": "PLOS ONE"
+    "sicot-j": "SICOT-J"
+    "auris, nasus, larynx": "Auris Nasus Larynx"
+    "journal of vascular surgery. venous and lymphatic disorders": "Journal of Vascular Surgery: Venous and Lymphatic Disorders"
+    "the british journal of dermatology": "British Journal of Dermatology"
